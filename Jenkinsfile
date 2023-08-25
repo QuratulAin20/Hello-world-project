@@ -11,13 +11,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                // Navigate to the repository directory
-                cd('Hello-world-project') {
                     // Build the Docker image using the Dockerfile
                     sh 'docker build -t my-app-hello-world:1.0 .'
                 }
             }
-        }
 
         stage('Push Docker Image') {
             steps {
