@@ -11,15 +11,17 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                    // Build the Docker image using the Dockerfile
-                    sh 'docker build -t my-app-hello-world:latest https://github.com/QuratulAin20/Hello-world-project.git'
+                // Build the Docker image using the Dockerfile
+                sh 'docker build -t hello-world:2.0 https://github.com/QuratulAin20/Hello-world-project.git'
                 }
             }
 
         stage('Push Docker Image') {
             steps {
+                //tagging docker image
+                sh 'docker tag hello-world:2.0 eagledock/hello-world'
                 // Push docker image to a container registry (docker hub)
-                sh 'docker push eagledock/my-app-hello-world:latest'
+                sh 'docker push eagledock/hello-world'
             }
         }
     }
