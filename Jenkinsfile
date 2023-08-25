@@ -25,12 +25,5 @@ pipeline {
                 sh 'docker push my-app-hello-world:1.0'
             }
         }
-        stage('Deploy to aws') {
-            steps {
-                // Use SSH to connect to aws EC2 instance and run deployment script 
-                // Replace place holder with SSH key, instance IP or etc.
-                sh 'ssh -i C:/Users/DELL/Downloads/teamcity.pem ubuntu@43.206.192.71 "bash -s" < deploy-script.sh'
-            }
-        }
     }
 }
