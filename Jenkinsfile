@@ -19,7 +19,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 // Push docker image to a container registry (docker hub)
-                sh 'docker push my-app-hello-world:1.0'
+                sh 'docker push eagledock/my-app-hello-world:1.0'
             }
         }
     }
