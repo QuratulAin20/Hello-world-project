@@ -18,10 +18,8 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                //tagging docker image
-                sh 'docker tag latest eagledock/my-app-hello-world:1.0'
                 // Push docker image to a container registry (docker hub)
-                sh 'docker push eagledock/my-app-hello-world'
+                sh 'docker push eagledock/my-app-hello-world:latest'
             }
         }
     }
