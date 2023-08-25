@@ -24,6 +24,16 @@ pipeline {
                 sh 'docker push eagledock/hello-world'
             }
         }
+        stage('Deploy on EC2') {
+            steps {
+                // Use the credential for SSH authentication
+                withCredentials([sshUserPrivateKey(credentialsId: '18.179.46.195', keyFileVariable: 'SSH_KEY')]) {
+                    sh """
+                        # Make sure to replace your-ec2-instance-ip with the actual IP
+                        ssh -i \$SSH_KEY ubuntu@18.179.46.195 'bash -s' < https://github.com/QuratulAin20/Hello-world-project.git/Bashscript.sh
+                    """
+                }
+            }
+        }
     }
-}
 
