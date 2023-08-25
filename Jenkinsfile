@@ -12,7 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                     // Build the Docker image using the Dockerfile
-                    sh 'docker build -t my-app-hello-world:1.0 .'
+                    sh 'docker build -t my-app-hello-world:1.0 https://github.com/QuratulAin20/Hello-world-project.git'
                 }
             }
 
@@ -24,3 +24,4 @@ pipeline {
         }
     }
 }
+
