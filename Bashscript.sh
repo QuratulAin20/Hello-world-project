@@ -1,7 +1,7 @@
 #!/bin/bash
 IMAGE_NAME="hello-world"
 IMAGE_TAG="2.0"
-CONTAINER_PORT=80
+CONTAINER_PORT=81
 HOST_PORT=81
 docker stop hello-world-container
 docker rm hello-world-container
